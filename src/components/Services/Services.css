@@ -1,0 +1,59 @@
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+.services-title{
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+.services-title h1 {
+    font-size: 60px;
+    font-weight: 700;
+    padding: 0px 30px;
+}
+.services-title img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 150px;
+}
+.service {
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.service h1{
+    font-size: 35px;
+}
+.service-name{
+    background: linear-gradient(270deg, #ff7e5f 100%, #feb47b 50%);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+.service p {
+   padding-top: 20px;
+   font-size: 22px;
+}
+.read-more{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.service:hover{
+    background-color: #ff7e5f;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
