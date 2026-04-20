@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -7,36 +8,38 @@ import Mywork from './components/MyWork/Mywork';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
-
-
-// Navbar Components Import 
-// import About from "./navbarcomponents/About";
-// import Portfolio from './navbarcomponents/Portfolio';
-// import Services from './navbarcomponents/Services';
-// import Blog from './navbarcomponents/Blog';
 function App() {
+  /* Scroll-reveal: observe elements with class "reveal" */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-   <>
-    <Navbar/>
-    <Hero/>
-    <About/>
-    <Services/>
-    <Mywork/>
-    <Contact/>
-    <Footer/>
-   
-  {/* <BrowserRouter>
-    <Routes>
-      <Route path='/About' element={<About/>}/>
-      <Route path='/Portfolio' element={<Portfolio/>}/>
-      <Route path='/Services' element = {<Services/>}/>
-      <Route path='/Blog' element={<Blog/>}/>
-    </Routes>
-  </BrowserRouter> */}
-  
-  </>
+    <div className="app">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Mywork />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

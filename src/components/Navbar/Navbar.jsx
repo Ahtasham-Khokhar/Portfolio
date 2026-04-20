@@ -1,41 +1,106 @@
-import React from 'react'
-import "./Navbar.css"
-import logo from "../../Assets/logoAhsam.png"
-import { useRef } from 'react'
-// import { Link } from 'react-router-dom'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-// import { useState } from 'react'
-import menu_open from "../../Assets/menu_open.svg"
-import menu_close from "../../Assets/menu_close.svg"
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
+import logo from '../../Assets/logoAhsam.png';
 
 const Navbar = () => {
-  // let [menu,setMenu] = useState(" ")
-  const menuref = useRef("");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
-  const open_menu = ()=>{
-    menuref.current.style.right = "0"
-  }
-  const close_menu = ()=>{
-    menuref.current.style.right="-350px" 
-  }
+  /* Navbar background on scroll */
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  /* Active section tracking */
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  const navLinks = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
+    { id: 'myWork', label: 'Work' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false);
+  };
+
   return (
-        <div className='navbar'>
-        <img className='logo' src={logo} alt='Logo'/>
-        <img className='nav-mob-open' onClick={open_menu} src={menu_open} alt="" />
-        <div ref={menuref} className='nav-menu'>
-          <img className='nav-mob-close' onClick={menu_close} src={menu_close} alt="" srcset="" />
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} id="navbar">
+      <a href="#home" className="navbar__logo" onClick={(e) => handleNavClick(e, 'home')}>
+        <img src={logo} alt="Ahtasham Logo" />
+      </a>
 
-        <a href="/"> <AnchorLink href="#home"> Home                             </AnchorLink></a>
-        <a href="/about"><AnchorLink href="#about" offset={50}> About         </AnchorLink></a>
-        <a href="/services"><AnchorLink href="#services" offset={50}>Services    </AnchorLink></a>
-        <a href="/myWork"><AnchorLink href="#myWork" offset={50}>Work</AnchorLink></a>
-        <a href="/contact">    <AnchorLink href="#contact" offset={50}>Contact</AnchorLink></a>
-            </div>
-        <div className='contact'>
-            <button type="button"> <AnchorLink href="#contact" className='anchor-link'  offset={50}> Contact Me</AnchorLink></button> </div>
-          </div>
+      {/* Hamburger button */}
+      <button
+        className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--active' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-  )
-}
+      {/* Navigation links */}
+      <div className={`navbar__menu ${menuOpen ? 'navbar__menu--open' : ''}`}>
+        <ul className="navbar__links">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className={`navbar__link ${activeSection === link.id ? 'navbar__link--active' : ''}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Overlay for mobile menu */}
+      {menuOpen && (
+        <div className="navbar__overlay" onClick={() => setMenuOpen(false)} />
+      )}
+
+      {/* CTA button */}
+      <a
+        href="#contact"
+        className="navbar__cta"
+        onClick={(e) => handleNavClick(e, 'contact')}
+      >
+        Contact Me
+      </a>
+    </nav>
+  );
+};
 
 export default Navbar;

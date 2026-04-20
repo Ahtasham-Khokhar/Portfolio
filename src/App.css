@@ -1,22 +1,6 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* App-level layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-body{
-  background-color: #F1ECE1;
-  color:  #0E294B;
-  height: 100vh;
-  width: 100vw;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-style: normal;
-}
-p{
-  font-family: "Roboto";
-}
-/*Brown color: #feb47b;*/
-
-/* background: linear-gradient(275deg,#ff7e5f 80%, #feb47b 30%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent; */
