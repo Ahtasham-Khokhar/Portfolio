@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="hero__content">
         <p className="hero__greeting">👋 Hello, I&apos;m</p>
         <h1 className="hero__title">
-          Ahtasham
+          Ahtasham Ashiq
           <span className="hero__role gradient-text"> Full-Stack Engineer</span>
         </h1>
         <p className="hero__subtitle">Based in Lahore, Pakistan</p>
