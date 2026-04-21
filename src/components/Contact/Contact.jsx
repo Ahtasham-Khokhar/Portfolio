@@ -62,7 +62,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: mail_icon, text: 'ahtashammalik887@gmail.com', alt: 'Email' },
     { icon: call_icon, text: '0310-4360887', alt: 'Phone' },
-    { icon: location_icon, text: 'D Ground, People Colony, Faisalabad, Pakistan', alt: 'Location' },
+    { icon: location_icon, text: 'Aitchison Society, Lahore, Pakistan', alt: 'Location' },
   ];
 
   return (

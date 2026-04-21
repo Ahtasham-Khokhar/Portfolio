@@ -42,12 +42,12 @@ const About = () => {
         <div className="about__info-col reveal">
           <h3 className="about__subheading">Engineering High-Performance Solutions</h3>
           <p className="about__text">
-            I am a **Full-Stack Software Engineer** specializing in building robust, 
-            scalable web applications. With a focus on the **T3 Stack (Next.js, TypeScript, Prisma)** and modern PHP frameworks like **Laravel**, I transform complex business 
+            I am a Full-Stack Software Engineer, specializing in building robust, 
+            scalable web applications. With a focus on the T3 Stack (Next.js, TypeScript, Prisma) and modern Javascript run time environment, I transform complex business 
             requirements into seamless digital experiences.
           </p>
           <p className="about__text">
-            Beyond writing code, I focus on **Software Architecture**, ensuring that 
+            Beyond writing code, I focus on Software Architecture, ensuring that 
             every system is maintainable, secure, and optimized for peak performance.
           </p>
 

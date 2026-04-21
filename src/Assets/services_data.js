@@ -2,13 +2,13 @@ const Services_Data = [
   {
     s_no: '01',
     s_name: 'Web Development',
-    s_desc: 'Building modern, responsive websites with clean code using React, Next.js, and cutting-edge frontend technologies.',
+    s_desc: 'Engineering scalable web architectures using React/Next.js and Laravel, ensuring 99.9% uptime and high-performance backend logic.',
     s_icon: '🌐',
   },
   {
     s_no: '02',
-    s_name: 'UI/UX Design',
-    s_desc: 'Crafting intuitive user interfaces with Figma and Canva, focused on aesthetics, usability, and user experience.',
+    s_name: 'SEO and Optimization',
+    s_desc: 'Implementing technical SEO, metadata schemas, and Core Web Vitals optimization to dominate search engine rankings and load speeds.',
     s_icon: '🎨',
   },
   {
@@ -19,20 +19,20 @@ const Services_Data = [
   },
   {
     s_no: '04',
-    s_name: 'App Design',
-    s_desc: 'Designing mobile-first application interfaces that deliver seamless experiences across iOS and Android platforms.',
+    s_name: 'App Development',
+    s_desc: 'Engineering high-performance cross-platform mobile applications for iOS and Android with a focus on native feel, real-time data sync, and scalable backend integration.',
     s_icon: '📲',
   },
   {
     s_no: '05',
-    s_name: 'Digital Marketing',
-    s_desc: 'Data-driven digital marketing strategies including SEO, paid ads, and analytics to grow your business online.',
+    s_name: 'Digital Growth Strategy',
+    s_desc: ' Integrating analytics, performance marketing, and automated lead generation to turn technical platforms into revenue engines.',
     s_icon: '📈',
   },
   {
     s_no: '06',
     s_name: 'Content Writing',
-    s_desc: 'Compelling copywriting and content creation for websites, blogs, and marketing materials that convert visitors.',
+    s_desc: 'Creating high-converting copy, landing pages, and technical documentation that aligns with your brand voice and business goals.',
     s_icon: '✍️',
   },
 ];

@@ -8,7 +8,7 @@ const Services = () => {
       <div className="services__header reveal">
         <h2 className="section-title">My Network</h2>
         <p className="services__subtitle">
-          Delivering end-to-end digital solutions tailored to your needs
+          Beyond writing code, I architect digital success. As a Full-Stack Engineer and Strategist, I leverage a hand-picked network of specialists to deliver end-to-end solutions that bridge technical excellence with business growth. From initial concept to global deployment, I provide a unified roadmap that integrates robust engineering, high-impact design, and data-driven marketing to ensure your project scales seamlessly and outperforms the competition.
         </p>
       </div>
 
