@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import logoAhsam from '../../Assets/logoAhsam.png';
+import logoAhsam from '../../Assets/logo.png';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -31,7 +31,7 @@ const Footer = () => {
         {/* Top Section */}
         <div className="footer__top">
           <div className="footer__brand">
-            <img src={logoAhsam} alt="Ahtasham Logo" className="footer__logo" />
+            <h2 className='text-2xl font-bold text-white mt-8 mb-4'>Ahtasham Ashiq</h2>
             <p className="footer__brand-desc">
               Frontend Developer based in Faisalabad, Pakistan. 
               Building modern web experiences with React and Next.js.

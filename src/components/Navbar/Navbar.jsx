@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import logo from '../../Assets/logoAhsam.png';
+import logo from '../../Assets/logo.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} id="navbar">
       <a href="#home" className="navbar__logo" onClick={(e) => handleNavClick(e, 'home')}>
-        <img src={logo} alt="Ahtasham Logo" />
+        <img src={logo} alt="Ahtasham Logo" className='rounded-full' />
       </a>
 
       {/* Hamburger button */}

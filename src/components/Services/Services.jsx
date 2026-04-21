@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <section id="services" className="services">
       <div className="services__header reveal">
-        <h2 className="section-title">My Services</h2>
+        <h2 className="section-title">My Network</h2>
         <p className="services__subtitle">
           Delivering end-to-end digital solutions tailored to your needs
         </p>

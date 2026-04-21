@@ -14,7 +14,7 @@
   padding: 0 6%;
   height: 76px;
   background: transparent;
-  transition: background var(--transition-normal),
+  transition: var(--transition-normal),
               box-shadow var(--transition-normal),
               backdrop-filter var(--transition-normal);
 }
@@ -32,12 +32,14 @@
   display: flex;
   align-items: center;
   z-index: 1001;
+  border-radius: 50%;
 }
 
 .navbar__logo img {
-  width: 56px;
-  height: 56px;
+  width: 70px;
+  height: 0px;
   object-fit: contain;
+  border-radius: 50%;
   transition: transform var(--transition-normal);
 }
 
