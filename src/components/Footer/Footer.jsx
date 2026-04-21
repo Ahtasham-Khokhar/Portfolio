@@ -32,8 +32,8 @@ const Footer = () => {
           <div className="footer__brand">
             <h2 className='text-2xl font-bold text-white mt-8 mb-4'>Ahtasham Ashiq</h2>
             <p className="footer__brand-desc">
-              Frontend Developer based in Faisalabad, Pakistan. 
-              Building modern web experiences with React and Next.js.
+              Full Stack Web Engineer based in Lahore, Pakistan. 
+              Building modern web experiences to the whole world.
             </p>
           </div>
 

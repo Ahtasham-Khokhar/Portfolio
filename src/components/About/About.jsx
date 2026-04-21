@@ -3,64 +3,78 @@ import './About.css';
 import ahsam from '../../Assets/ahsam.jpg';
 
 const About = () => {
-  const skills = [
-    { name: 'HTML & CSS', level: 90 },
-    { name: 'JavaScript', level: 75 },
-    { name: 'React JS', level: 80 },
-    { name: 'Next JS', level: 65 },
+  // Full-Stack Core Competencies
+  const coreSkills = [
+    { name: 'Architecture & Next.js' },
+    { name: 'TypeScript / React' },
+    { name: 'Node.js & Backend Logic' },
+    { name: 'PostgreSQL / Prisma' },
+  ];
+
+  const techStack = [
+    "Node.js", "MongoDB", "Redux Toolkit", "REST APIs", "Git/GitHub"
   ];
 
   const stats = [
-    { value: '2+', label: 'Years of Experience' },
-    { value: '10+', label: 'Successful Projects' },
-    { value: '5+', label: 'Happy Clients' },
+    { value: '2+', label: 'Years Experience' },
+    { value: '15+', label: 'Projects Shipped' },
+    { value: '99%', label: 'Uptime Delivery' },
   ];
 
   return (
     <section id="about" className="about">
-      <div className="about__header reveal">
+      <div className="about__header">
         <h2 className="section-title">About Me</h2>
+        <span className="section-subtitle">Bridging the gap between design and scalable logic</span>
       </div>
 
       <div className="about__content">
+        {/* Left Column: Image with interactive border */}
         <div className="about__image-col reveal">
           <div className="about__image-wrapper">
-            <img src={ahsam} alt="Ahtasham — Developer" className="about__image" />
+            <img src={ahsam} alt="Ahtasham — Full Stack Engineer" className="about__image" />
+            <div className="about__image-overlay"></div>
             <div className="about__image-border"></div>
           </div>
         </div>
 
+        {/* Right Column: Engineering Narrative */}
         <div className="about__info-col reveal">
+          <h3 className="about__subheading">Engineering High-Performance Solutions</h3>
           <p className="about__text">
-            I am an experienced Frontend Developer with over 2 years in the programming field. 
-            During this time, I have completed numerous projects that demonstrate my expertise 
-            and commitment to quality.
+            I am a **Full-Stack Software Engineer** specializing in building robust, 
+            scalable web applications. With a focus on the **T3 Stack (Next.js, TypeScript, Prisma)** and modern PHP frameworks like **Laravel**, I transform complex business 
+            requirements into seamless digital experiences.
           </p>
           <p className="about__text">
-            I build websites that are user-friendly, responsive, fast-loading, accessible, 
-            and SEO-optimized — all customized precisely to client requirements with clear 
-            call-to-action elements.
+            Beyond writing code, I focus on **Software Architecture**, ensuring that 
+            every system is maintainable, secure, and optimized for peak performance.
           </p>
 
+          {/* Skill Progress Bars */}
           <div className="about__skills">
-            {skills.map((skill, index) => (
+            {coreSkills.map((skill, index) => (
               <div className="about__skill" key={index}>
                 <div className="about__skill-header">
                   <span className="about__skill-name">{skill.name}</span>
-                  <span className="about__skill-percent">{skill.level}%</span>
                 </div>
                 <div className="about__skill-track">
-                  <div
-                    className="about__skill-fill"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
+                  <div className="about__skill-fill" style={{ width: `${skill.level}%` }}></div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Secondary Stack Badges */}
+          <div className="about__tech-stack">
+            {techStack.map((tech, i) => (
+              <span key={i} className="tech-badge">{tech}</span>
             ))}
           </div>
         </div>
       </div>
 
+      {/* Stats Section */}
       <div className="about__stats reveal">
         {stats.map((stat, index) => (
           <div className="about__stat-card" key={index}>
