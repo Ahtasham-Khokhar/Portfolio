@@ -9,6 +9,12 @@ import * as Yup from 'yup';
 const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [email, setEmail] = useState('');
+  const handleFocus =()=>{
+    if(!email){
+      setEmail("ahtashammalik887@gmail.com")
+    }
+  }
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -117,12 +123,13 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-section__field">
-                  <label htmlFor="contact-email">Your Email</label>
+                  <label htmlFor="contact-email">My Email</label>
                   <Field
                     type="email"
                     name="email"
                     id="contact-email"
-                    placeholder="john@example.com"
+                    placeholder="ahtashammalik887@gmail.com"
+                    onFocus={handleFocus}
                     className={errors.email && touched.email ? 'field-error' : ''}
                   />
                   <ErrorMessage name="email" component="span" className="contact-section__error" />
