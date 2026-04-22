@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
             {/* Resume Button in Footer as requested */}
             <a href="/Ahtasham_Resume.pdf" download className="footer__resume-btn">
-              <FaDownload size={14} /> Download CV
+              <FaDownload size={14} /> Download Resume
             </a>
           </div>
 
