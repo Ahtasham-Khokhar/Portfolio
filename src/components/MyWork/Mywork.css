@@ -177,8 +177,36 @@
    ============================================= */
 
 @media (max-width: 992px) {
+  .mywork {
+    padding: 80px 6%;
+  }
+
   .mywork__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mywork {
+    padding: 60px 5%;
+  }
+
+  .mywork__header {
+    margin-bottom: 40px;
+  }
+
+  .mywork__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .mywork__cta {
+    margin-top: 36px;
+  }
+
+  .mywork__show-more {
+    padding: 14px 32px;
+    font-size: 0.95rem;
   }
 }
 
@@ -205,5 +233,44 @@
   .mywork__show-more {
     padding: 14px 32px;
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mywork {
+    padding: 50px 4%;
+  }
+
+  .mywork__header {
+    margin-bottom: 30px;
+  }
+
+  .mywork__card-overlay {
+    padding: 18px;
+  }
+
+  .mywork__card-category {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+
+  .mywork__card-title {
+    font-size: 1rem;
+  }
+
+  .mywork__card-link {
+    font-size: 0.85rem;
+  }
+
+  .mywork__show-more {
+    padding: 12px 28px;
+    font-size: 0.88rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .mywork__cta {
+    margin-top: 28px;
   }
 }

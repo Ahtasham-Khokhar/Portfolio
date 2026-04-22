@@ -108,6 +108,11 @@
   background: rgba(255, 126, 95, 0.05);
 }
 
+/* Hamburger hidden on desktop */
+.navbar__hamburger {
+  display: none;
+}
+
 /* =============================================
    RESPONSIVE
    ============================================= */
@@ -115,6 +120,10 @@
 @media (max-width: 1024px) {
   .navbar {
     height: 75px;
+  }
+
+  .navbar__container {
+    padding: 0 5%;
   }
 
   .navbar__actions {
@@ -188,5 +197,25 @@
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
     z-index: 999;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 65px;
+  }
+
+  .navbar__container {
+    padding: 0 4%;
+  }
+
+  .navbar__menu {
+    width: 100%;
+    right: -100%;
+  }
+
+  .navbar__link {
+    font-size: 1rem;
+    padding: 12px 16px;
   }
 }

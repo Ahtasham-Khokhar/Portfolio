@@ -121,8 +121,43 @@
    ============================================= */
 
 @media (max-width: 992px) {
+  .services {
+    padding: 80px 6%;
+  }
+
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 5%;
+  }
+
+  .services__header {
+    margin-bottom: 40px;
+  }
+
+  .services__subtitle {
+    text-align: center;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .services__card {
+    padding: 30px 22px;
+  }
+
+  .services__card-title {
+    font-size: 1.1rem;
+  }
+
+  .services__card-desc {
+    font-size: 0.9rem;
   }
 }
 
@@ -138,5 +173,28 @@
 
   .services__card {
     padding: 28px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 50px 4%;
+  }
+
+  .services__card-icon {
+    font-size: 1.8rem;
+  }
+
+  .services__card-title {
+    font-size: 1rem;
+  }
+
+  .services__card-desc {
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+
+  .services__card-number {
+    font-size: 2.5rem;
   }
 }
